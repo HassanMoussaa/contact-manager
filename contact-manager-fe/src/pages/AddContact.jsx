@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Cookies from "js-cookie";
 import axios from "axios";
+import "./Signin.css";
 const AddContact = () => {
   const [name, setName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -19,11 +20,13 @@ const AddContact = () => {
     );
   };
   return (
-    <div>
+    <div className="signin_container">
       <div>
+        <h2>Add Contact</h2>
         <input
           type="text"
           value={name}
+          placeholder="Name"
           onChange={(e) => {
             setName(e.target.value);
           }}
@@ -33,6 +36,7 @@ const AddContact = () => {
         <input
           type="text"
           value={phoneNumber}
+          placeholder="Phone #"
           onChange={(e) => {
             setPhoneNumber(e.target.value);
           }}
@@ -42,6 +46,7 @@ const AddContact = () => {
         <input
           type="text"
           value={latitude}
+          placeholder="latitude"
           onChange={(e) => {
             setLatitude(e.target.value);
           }}
@@ -51,6 +56,7 @@ const AddContact = () => {
         <input
           type="text"
           value={longitude}
+          placeholder="longitude"
           onChange={(e) => {
             setLongitude(e.target.value);
           }}
