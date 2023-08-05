@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
+import "./Signin.css";
+
 const Signin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -15,11 +17,13 @@ const Signin = () => {
   };
 
   return (
-    <div>
+    <div className="signin_container">
       <div>
+        <h2>Sign In</h2>
         <input
           type="text"
           value={email}
+          placeholder="Email"
           onChange={(e) => {
             setEmail(e.target.value);
           }}
@@ -29,6 +33,7 @@ const Signin = () => {
         <input
           type="password"
           value={password}
+          placeholder="Password"
           onChange={(e) => {
             setPassword(e.target.value);
           }}
