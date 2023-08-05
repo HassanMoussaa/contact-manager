@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes,  } from 'react-router-dom';
 import './App.css';
 import Contacts from "./pages/Contacts"
 import Signin from "./pages/Signin"
+import AddContact from "./pages/AddContact"
 
 function App() {
   return (
@@ -11,6 +12,8 @@ function App() {
         <Route path="/contacts" >
           <Route index element={<Contacts/>} />
         </Route>
+        <Route path='/contacts/add' element={<AddContact/>} /> 
+         
         <Route path='*' element={<h1>404</h1>} />
       </Routes>
     </BrowserRouter>

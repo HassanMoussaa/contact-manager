@@ -2,8 +2,9 @@ import ContactCard from "../components/ContactCard";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
-
+import { useNavigate } from "react-router-dom";
 const Contacts = () => {
+  const navigate = useNavigate();
   const [contacts, setContacts] = useState([]);
 
   const fetchContacts = async () => {
@@ -18,10 +19,18 @@ const Contacts = () => {
     fetchContacts();
   }, []);
 
+  const navigateToAddContact = () => {
+    navigate("/contacts/add");
+  };
+
   return (
     <div>
       <div>Contacts Page</div>
-
+      <div>
+        <button className="add" onClick={navigateToAddContact}>
+          Add Contact
+        </button>
+      </div>
       {contacts.map((contact, index) => {
         return <ContactCard contact={contact} key={index} />;
       })}
