@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Cookies from "js-cookie";
 import "./Signin.css";
 
 const Signin = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -12,8 +14,10 @@ const Signin = () => {
       email,
       password,
     });
-
-    Cookies.set("jwt_token", result.data.authorization.token, { expires: 1 });
+    if (result.data.message === "success") {
+      Cookies.set("jwt_token", result.data.authorization.token, { expires: 1 });
+      navigate("/contacts");
+    }
   };
 
   return (
