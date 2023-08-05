@@ -1,0 +1,59 @@
+.contactHeader {
+  text-align: center;
+  font-size: 5rem;
+}
+
+.addContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+}
+
+/* for button */
+.add {
+  display: inline-block;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #4caf50;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.add:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+}
+
+.add:active {
+  background-color: #3e8e41;
+  transform: translateY(0);
+}
+
+.add:focus {
+  outline: none;
+}
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 70px;
+  background-color: #4caf50;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
+import "./Contacts.css";
 const Contacts = () => {
   const navigate = useNavigate();
   const [contacts, setContacts] = useState([]);
@@ -25,8 +26,8 @@ const Contacts = () => {
 
   return (
     <div>
-      <div>Contacts Page</div>
-      <div>
+      <div className="contactHeader">Contacts Page</div>
+      <div className="addContainer">
         <button className="add" onClick={navigateToAddContact}>
           Add Contact
         </button>
