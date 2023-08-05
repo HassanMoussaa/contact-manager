@@ -36,6 +36,9 @@ class ContactController extends Controller
         ]);
 
 
-        return response()->json($contact, 201);
+        return response()->json([
+            'contact' => $contact,
+            'message' => 'Contact created successfully',
+        ], 201);
     }
 }

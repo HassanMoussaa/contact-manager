@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import Cookies from "js-cookie";
 import axios from "axios";
 import "./Signin.css";
+import { useNavigate } from "react-router-dom";
 const AddContact = () => {
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [latitude, setLatitude] = useState("");
@@ -18,6 +20,9 @@ const AddContact = () => {
         headers: { Authorization: `Bearer ${jwtToken}` },
       }
     );
+    if (result.data.message === "Contact created successfully") {
+      navigate("/contacts");
+    }
   };
   return (
     <div className="signin_container">
