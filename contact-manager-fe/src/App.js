@@ -3,6 +3,7 @@ import './App.css';
 import Contacts from "./pages/Contacts"
 import Signin from "./pages/Signin"
 import AddContact from "./pages/AddContact"
+import ContactDetails from "./pages/ContactDetails"
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
           <Route index element={<Contacts/>} />
         </Route>
         <Route path='/contacts/add' element={<AddContact/>} /> 
-         
+         <Route path='/ContactDetails/:id' element={<ContactDetails/>} /> 
         <Route path='*' element={<h1>404</h1>} />
       </Routes>
     </BrowserRouter>

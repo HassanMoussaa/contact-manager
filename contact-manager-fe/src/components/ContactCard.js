@@ -1,8 +1,16 @@
 import React from 'react'
-
+import { useNavigate } from "react-router-dom";
 const ContactCard = ({ contact }) => {
+const navigate = useNavigate();
+const navigateToContactDetails = ()=>{
+navigate("/ContactDetails")
+}
+
+
+
+
   return (
-    <div className='cardContainer'>
+    <div className='cardContainer' onClick={navigateToContactDetails}>
       
      <div className='card'>
 
