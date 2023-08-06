@@ -9,9 +9,9 @@ const Contacts = () => {
   const [contacts, setContacts] = useState([]);
 
   const fetchContacts = async () => {
-    const jwtToken = Cookies.get("jwt_token");
+    // const jwtToken = Cookies.get("jwt_token");
     const result = await axios.get("http://127.0.0.1:8000/api/contacts", {
-      headers: { Authorization: `Bearer ${jwtToken}` },
+      //   headers: { Authorization: `Bearer ${jwtToken}` },
     });
     setContacts(result.data);
   };

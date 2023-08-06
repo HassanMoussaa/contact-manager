@@ -30,6 +30,6 @@ Route::controller(AuthController::class)->group(function () {
 
 
 
-Route::get('contacts', [ContactController::class, 'getContacts']);
-Route::post('contacts', [ContactController::class, 'addContact']);
-Route::get('contact/{id}', [ContactController::class, 'getContactById']);
+Route::get('contacts', [ContactController::class, 'index']);
+Route::post('contacts', [ContactController::class, 'store']);
+Route::get('contact/{id}', [ContactController::class, 'show']);
