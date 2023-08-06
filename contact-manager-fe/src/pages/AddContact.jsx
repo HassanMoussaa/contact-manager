@@ -9,25 +9,41 @@ const AddContact = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [latitude, setLatitude] = useState("");
   const [longitude, setLongitude] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const submit = async () => {
+    if (!name || !phoneNumber || !latitude || !longitude) {
+      setErrorMessage("Please fill in all the required fields.");
+      return;
+    }
+
     const data = { name, phone_number: phoneNumber, latitude, longitude };
-    // const jwtToken = Cookies.get("jwt_token");
-    const result = await axios.post(
-      "http://127.0.0.1:8000/api/contacts",
-      data,
-      {
-        // headers: { Authorization: `Bearer ${jwtToken}` },
+
+    try {
+      // const jwtToken = Cookies.get("jwt_token");
+      const result = await axios.post(
+        "http://127.0.0.1:8000/api/contacts",
+        data,
+        {
+          // headers: { Authorization: `Bearer ${jwtToken}` },
+        }
+      );
+
+      if (result.data.message === "Contact created successfully") {
+        navigate("/contacts");
       }
-    );
-    if (result.data.message === "Contact created successfully") {
-      navigate("/contacts");
+    } catch (error) {
+      console.error(error);
+      setErrorMessage(
+        "An error occurred while creating the contact. Please try again later."
+      );
     }
   };
   return (
     <div className="signin_container">
       <div>
         <h2>Add Contact</h2>
+        <label htmlFor="name">Name:</label>
         <input
           type="text"
           value={name}
@@ -35,9 +51,11 @@ const AddContact = () => {
           onChange={(e) => {
             setName(e.target.value);
           }}
+          required
         />
       </div>
       <div>
+        <label htmlFor="phoneNumber">Phone #:</label>
         <input
           type="text"
           value={phoneNumber}
@@ -45,9 +63,11 @@ const AddContact = () => {
           onChange={(e) => {
             setPhoneNumber(e.target.value);
           }}
+          required
         />
       </div>
       <div>
+        <label htmlFor="latitude">Latitude:</label>
         <input
           type="text"
           value={latitude}
@@ -55,9 +75,11 @@ const AddContact = () => {
           onChange={(e) => {
             setLatitude(e.target.value);
           }}
+          required
         />
       </div>
       <div>
+        <label htmlFor="longitude">Longitude:</label>
         <input
           type="text"
           value={longitude}
@@ -65,8 +87,10 @@ const AddContact = () => {
           onChange={(e) => {
             setLongitude(e.target.value);
           }}
+          required
         />
       </div>
+      {errorMessage && <p className="error_message">{errorMessage}</p>}
       <div>
         <button onClick={submit}>Submit</button>
       </div>

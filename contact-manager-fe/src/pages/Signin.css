@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
   padding: 1rem;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
@@ -17,6 +17,11 @@
   margin-bottom: 1rem;
 }
 
+.signin_container label {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
 .signin_container input {
   width: 20rem;
   height: 2rem;
@@ -24,6 +29,8 @@
   border: 1px solid #ccc;
   border-radius: 3px;
   outline: none;
+  display: block;
+  margin-top: 0.5rem;
 }
 
 .signin_container button {
@@ -43,4 +50,10 @@
 
 .signin_container button:active {
   background-color: #3e8e41;
+}
+
+.error_message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
 }
