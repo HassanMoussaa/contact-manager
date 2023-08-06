@@ -8,11 +8,11 @@ const ContactDetails = () => {
 
   const [contact, setContact] = useState([]);
   const fetchContact = async () => {
-    const jwtToken = Cookies.get("jwt_token");
+    // const jwtToken = Cookies.get("jwt_token");
     const result = await axios.get(`http://127.0.0.1:8000/api/contact/${id}`, {
-      headers: { Authorization: `Bearer ${jwtToken}` },
+      //   headers: { Authorization: `Bearer ${jwtToken}` },
     });
-    setContact(result.data.contact);
+    setContact(result.data);
   };
 
   useEffect(() => {
