@@ -1,14 +1,12 @@
 import React from 'react'
 import { useNavigate } from "react-router-dom";
+
+
 const ContactCard = ({ contact }) => {
 const navigate = useNavigate();
 const navigateToContactDetails = ()=>{
-navigate("/ContactDetails")
+navigate(`/ContactDetails/${contact.id}`)
 }
-
-
-
-
   return (
     <div className='cardContainer' onClick={navigateToContactDetails}>
       
