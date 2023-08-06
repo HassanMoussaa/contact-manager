@@ -12,12 +12,12 @@ const AddContact = () => {
 
   const submit = async () => {
     const data = { name, phone_number: phoneNumber, latitude, longitude };
-    const jwtToken = Cookies.get("jwt_token");
+    // const jwtToken = Cookies.get("jwt_token");
     const result = await axios.post(
       "http://127.0.0.1:8000/api/contacts",
       data,
       {
-        headers: { Authorization: `Bearer ${jwtToken}` },
+        // headers: { Authorization: `Bearer ${jwtToken}` },
       }
     );
     if (result.data.message === "Contact created successfully") {
