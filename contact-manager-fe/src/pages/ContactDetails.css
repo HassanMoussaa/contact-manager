@@ -1,0 +1,16 @@
+.containerDetails {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contactDetails {
+  background: #3e8e41;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  color: aliceblue;
+}
