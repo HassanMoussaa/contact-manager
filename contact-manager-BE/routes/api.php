@@ -32,3 +32,4 @@ Route::controller(AuthController::class)->group(function () {
 
 Route::get('contacts', [ContactController::class, 'getContacts']);
 Route::post('contacts', [ContactController::class, 'addContact']);
+Route::get('contact/{id}', [ContactController::class, 'getContactById']);

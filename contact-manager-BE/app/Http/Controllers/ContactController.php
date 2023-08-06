@@ -15,6 +15,25 @@ class ContactController extends Controller
         return response()->json($contacts);
     }
 
+    public function getContactById($id)
+    {
+        // Find the contact by ID and return as JSON response
+        $contact = Contact::find($id);
+
+        if (!$contact) {
+
+            return response()->json(['message' => 'Contact not found'], 404);
+        }
+
+        return response()->json([
+            'message' => 'Contact created successfully',
+            'contact' => $contact,
+        ]);
+    }
+
+
+
+
     public function addContact(Request $request)
     {
 
