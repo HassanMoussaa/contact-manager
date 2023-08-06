@@ -33,7 +33,9 @@ const ContactDetails = () => {
           <p>Longitude: {contact.longitude}</p>
         </div>
       </div>
-      <div>{/* <MapCard position={[latitude, longitude]} /> */}</div>
+      <div>
+        <MapCard latitude={latitude} longitude={longitude} />
+      </div>
     </div>
   );
 };
