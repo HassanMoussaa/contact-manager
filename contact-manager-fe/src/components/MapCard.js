@@ -1,10 +1,10 @@
 import React from 'react'
 import { MapContainer, TileLayer,Marker, Popup} from 'react-leaflet'
 
-const MapCard = ({ latitude, longitude }) => {
+const MapCard = ({ latitude, longitude,name }) => {
 
 
-if (latitude===undefined || longitude ===undefined){
+if (latitude===undefined || longitude ===undefined || name===undefined){
     return null
 }
  console.log(latitude,longitude)   
@@ -18,7 +18,7 @@ if (latitude===undefined || longitude ===undefined){
         />
         <Marker position={[latitude,longitude]}>
         <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
+            {name}
         </Popup>
         </Marker>
     </MapContainer>
